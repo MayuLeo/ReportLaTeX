@@ -1,0 +1,42 @@
+%\makeatletter
+%% sectionの下マージンを小さく
+%\renewcommand{\section}{
+%  \@startsection{section}{1}{\z@}
+%                {0.1\Cvs}{0.1\Cvs}
+%                {\normalfont\normalsize\headfont\raggedright}}
+%% subsectionの下マージンを小さく
+%\renewcommand{\subsection}{
+%  \@startsection{subsection}{1}{\z@}
+%                {0.1\Cvs}{0.1\Cvs}
+%                {\normalfont\normalsize\headfont\raggedright}}
+%\makeatother
+
+
+\usepackage[top=25truemm,bottom=25truemm,left=25truemm,right=25truemm]{geometry}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage[dvipdfmx]{color}
+\usepackage{here}
+\usepackage{url}
+\usepackage{longtable}
+\usepackage{listings,jlisting}
+\renewcommand{\lstlistingname}{図}
+\lstset
+    {
+      language=python,
+      frame=single,
+      captionpos=b,
+      basicstyle=\ttfamily\footnotesize,
+      breaklines=true,
+      framexleftmargin=0mm,
+      numbers=left,
+      stepnumber=1,
+      showstringspaces=false
+      }
+
+\renewcommand{\labelenumi}{(\arabic{enumi}) } %enumerateの設定
+
+\newcommand{\pict}[3]{{\begin{figure}[H]\begin{center}\includegraphics[width=#1cm]{#2}\caption{#3}\end{center}\end{figure}}} %\pict{画像幅}{画像名}{キャプション}
+
+\newcommand{\pictl}[4]{{\begin{figure}[H]\begin{center}\includegraphics[width=#1cm]{#2}\caption{#3}\label{#4}\end{center}\end{figure}}} %\pictl{画像幅}{画像名}{キャプション}{Label}
+
+\newcommand{\wpictl}[8]{\begin{figure}[H]\begin{minipage}{0.5\hsize}\begin{center}\includegraphics[width=#1cm]{#2}\end{center}\caption{#3}\label{#4}\end{minipage}\begin{minipage}{0.5\hsize}\begin{center}\includegraphics[width=#5cm]{#6}\end{center}\caption{#7}\label{#8}\end{minipage}\end{figure}}%\wpictl{画像幅}{画像名}{キャプション}{ラベル}{画像幅}{画像名}{キャプション}{ラベル}
